@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #181c23;
+    color: #fffbf0;
+}
+
+h1{
+    margin: 0;
+}
+
+.myButton{
+    padding-top: 10 px; 
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 18px;
+    color: #181326;
+    border-radius: 4px;
+    background-color: #a6f750;
+
+}
