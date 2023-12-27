@@ -5,8 +5,8 @@ let numero = 53;
             console.log(i);
             console.log("Numero não é primo.");
             return;
-        }else{
+        }/*else{
             continue;
-        }
+        }*/
     }
     console.log("número primo");
