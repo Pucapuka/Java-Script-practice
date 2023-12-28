@@ -1,0 +1,15 @@
+function saudacao(nome){
+  console.log("Hello, "+nome+"!");
+}
+
+const saudar = function(nome){
+  console.log("Hello, "+ nome+"!");
+}
+
+const hail = ((nome)=>{
+  console.log("Hello, "+ nome+"!");
+});
+
+saudacao('Paulo');
+saudar('Mateus');
+hail("Marcus");
