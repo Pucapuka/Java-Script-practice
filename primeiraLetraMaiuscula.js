@@ -19,3 +19,16 @@ for (let i=0; i<nomes.length; i++){
 for(let i=0; i<nomes.length; i++){
     console.log(i+1+"º: "+ novo[i]);
 }
+
+/*Se fosse feito com forEach
+
+let i = 1;
+
+nomes.forEach(nome =>{
+    
+    console.log(i+"º: "+capitalize(nome));
+    i++;
+}
+)
+*/
+
