@@ -1,10 +1,21 @@
-let nome = 'joãozinho';
+let nomes = ['joãozinho', 'pedrinho', 'luizinho'];
 
+//essa é a função que retorna a primeira maiúscula
 function capitalize(n){
     let primeiraLetra = n.slice(0,1);
     let resto = n.slice(1);
     
-    console.log(primeiraLetra.toUpperCase()+resto.toLowerCase());
+    return primeiraLetra.toUpperCase()+resto.toLowerCase();
 }
 
-capitalize(nome);
+let novo = [];
+
+//guardando em uma variável cada elemento da lista
+for (let i=0; i<nomes.length; i++){
+    novo[i] = capitalize(nomes[i]);
+}
+
+//Imprimindo a lista com numeração ordinal
+for(let i=0; i<nomes.length; i++){
+    console.log(i+1+"º: "+ novo[i]);
+}
