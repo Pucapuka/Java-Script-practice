@@ -46,3 +46,37 @@ let doberman = criarCachorro('Doberman', 4, 'pardo');
 console.log(doberman.raca);
 console.log(doberman.patas);
 doberman.latir();
+
+//instanciando objeto por "new" (comum de muitas linguagens)
+function Cachorro(raca, patas, cor){
+    this.raca = raca;
+    this.patas = patas;
+    this.cor = cor;
+    this.latir = function(){
+        console.log("auau!");
+    };
+}
+
+Cachorro.prototype.uivar = function(){ //disse que a melhor forma mais correta de abordar o método (atrelado ao prototype).
+    console.log("Auuuuuuu!");
+    
+}
+let huscky = new Cachorro("Husky", 4, 'branco');
+
+console.log (huscky.cor);
+huscky.uivar();
+huscky.latir();
+
+//aproach mais moderno de criar uma classe (parecido com as outras linguagens)
+
+class dog{
+    constructor(raca, patas, cor){
+        this.raca = raca;
+        this.cor = cor;
+        this.patas = patas;
+    }
+}
+
+let maltez = new dog("Maltez", 4, "branco");
+console.log(maltez.raca);
+console.log(maltez.patas);
