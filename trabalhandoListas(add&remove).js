@@ -53,7 +53,7 @@ let carrinho = new Carrinho([
         qtd: 3,
         valor: 3
     }
-], 4, 9);
+], 4, 29);
 
 console.log(carrinho);
 carrinho.addItem({id:3, nome:"boneca", qtd:3, valor:5});
