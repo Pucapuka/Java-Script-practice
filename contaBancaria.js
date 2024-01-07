@@ -1,30 +1,54 @@
 class Conta{
-    constructor(saldoAtual){
-        this.saldoAtual = saldoAtual;
+    constructor(saldoCorrente, saldoPoupanca, jurosPoupanca, jurosEspecial){
+        this.saldoCorrente = saldoCorrente;
+        this.saldoPoupanca = saldoPoupanca;
+        this.jurosPoupanca = jurosPoupanca;
     }
-
-    depositar = function(valor){
-        this.saldoAtual += valor;
+    
+    transferirParaCorrente(valor){
+        this.saldoPoupanca -= valor;
+        this.saldoCorrente += valor;
     }
-
-    sacar = function(valor){
-        if(valor>this.saldoAtual){
-            console.log("Saldo insuficiente");
-        }else{
-            this.saldoAtual -= valor;
-        }
+    
+    transferirParaPoupanca(valor){
+        this.saldoPoupanca += valor;
+        this.saldoCorrente -= valor;
     }
-
-    verificarSaldo = function(){
-        console.log(`Saldo atual: ${this.saldoAtual}.`);
+    
+    jurosDeAniversario(){
+        let juros = (this.saldoPoupanca * this.jurosPoupanca)/100;
+        this.saldoPoupanca += juros;
+    }
+    
+    status(){
+        console.log(`Saldo Conta Corrente: ${this.saldoCorrente}\nSaldo Conta Poupança: ${this.saldoPoupanca}\nJuros da Poupança:    ${this.jurosPoupanca}\n`);
     }
 }
 
-let contaPaulo = new Conta(200);
+class ContaEspecial extends Conta{
+    
+   constructor(saldoCorrente, saldoPoupanca, jurosPoupanca, jurosEspecial){
+       super(saldoCorrente, saldoPoupanca, jurosPoupanca, jurosEspecial*2);
+    }
+}
 
-contaPaulo.verificarSaldo();//200
 
-contaPaulo.sacar(100);
-contaPaulo.verificarSaldo();//100
-contaPaulo.depositar(350);
-contaPaulo.verificarSaldo();//450
+let conta1 = new Conta(1000, 1000, 12);
+conta1.status();
+conta1.transferirParaCorrente(500);
+conta1.status();
+conta1.transferirParaPoupanca(500);
+conta1.status();
+conta1.jurosDeAniversario();
+conta1.status();
+
+console.log("conta 2")
+let conta2 = new ContaEspecial(1000, 1000, 12);
+conta1.status();
+conta1.transferirParaCorrente(500);
+conta1.status();
+conta1.transferirParaPoupanca(500);
+conta1.status();
+conta1.jurosDeAniversario();
+conta1.status();
+
