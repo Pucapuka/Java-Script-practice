@@ -1,0 +1,11 @@
+agenda-app/
+│
+├── server.js
+ ___package-lock.json
+├── package.json
+└── public/
+    ├── index.html
+    └── script.js
+ ___backup
+    |__backup_postgres_db.sql
+ ___README.md
