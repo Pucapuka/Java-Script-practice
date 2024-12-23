@@ -50,23 +50,27 @@ function calculate(){
     const result1 = variable1().toFixed(2); 
     const result2 = variable2().toFixed(2);
     const finalCalc = allEquationCalculated().toFixed(2);
-    
+
     if (!isNaN(result1) && !isNaN(result2)){
         
-        result.innerHTML = `The result is:\nx': ${result1} \nx": ${result2}`;
+        result.innerHTML = `The result is:\n\n x': ${result1} x": ${result2}. `;
         
     } else if(!isNaN(result1)){
         
-        result.innerHTML = `The result is:\nx': ${result1}`;
+        result.innerHTML = `The result is: x': ${result1}. `;
         
     } else if(!isNaN(result2)){
         
-        result.innerHTML = `The result is:\nx': ${result2}`;
+        result.innerHTML = `The result is:x': ${result2}. `;
         
     } else{
         
-        result.innerHTML = `There's no valid result.`;
+        result.innerHTML = `There's no valid result. `;
         
+    }
+    
+    if(finalCalc>=0){
+        result.innerHTML +=`\n All the equation calculated is: ${finalCalc}`;
     }
     
     return result
